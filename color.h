@@ -11,9 +11,10 @@ void write_color(std::ostream &out, const color pixel_color, int samples_per_pix
     double g = pixel_color.y();
     double b = pixel_color.z();
 
-    r /= static_cast<double>(samples_per_pixel);
-    g /= static_cast<double>(samples_per_pixel);
-    b /= static_cast<double>(samples_per_pixel);
+    auto scale = 1.0/samples_per_pixel;
+    r = sqrt(scale * r);
+    g = sqrt(scale * g);
+    b = sqrt(scale * b);
     /*
     auto scale = 1.0 / samples_per_pixel;
     r *= scale;
