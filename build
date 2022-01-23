@@ -1,1 +1,1 @@
-g++ main.cpp -pg -o raytracer && ./raytracer > image.ppm && feh --force-aliasing image.ppm
+g++ main.cpp -pthread -O3 -o raytracer && ./raytracer > image.ppm
