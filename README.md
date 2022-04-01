@@ -12,10 +12,20 @@ Used this library to make a thread pool [CTPL](https://github.com/vit-vit/CTPL).
 - `lines_per_thread` is the number of lines that each thread should handle (line is just a single row of pixels of the image width)
 
 ### How to use?
-Compile using your favourite c++ compiler and if it has an option for an optimizer use it see [build.sh](build.sh). also notice that this would make your CPU an inefficient heater, Mine got to 95C. and if you didn't use the optimizer it would take ages to finish.
-Redirect STDOUT to a file with .ppm extension then open it using an image viewer. it should look like this
-![](image.jpeg)
+to make the raytracer
+```
+make
+```
+to output the image, this redirects the program output to a file called `image.ppm`
+```
+make image
+```
+You can view the image using your any image viewer that supports ppm, if it doesn't support ppm below command to ouput a png image
+```
+make jpeg
+```
 
+* notice that this would make your CPU an inefficient heater, Mine got to 95C. and if you didn't use the optimizer it would take ages to finish.
 
 Followed this guide
 [_Ray Tracing in One Weekend_](https://raytracing.github.io/books/RayTracingInOneWeekend.html)
